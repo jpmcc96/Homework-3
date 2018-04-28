@@ -29,3 +29,7 @@ ParkingTicket:
   Fields:
     -fine: int
   Methods:
+    +ParkingTicket(illegalMinutes: int)
+    -getFineAmount(illegalMethods: int)
+    +getReport(car: ParkedCar, police: PoliceOfficer)
+-----------------------------------------------------    
