@@ -43,3 +43,5 @@ PoliceOfficer:
     +PoliceOfficer(name: String, badgeNum: String)
     +hasTimeExpired(car: ParkedCar, meter: ParkingMeter)
     +generateParkingTicket()
+    +getOfficerName()
+    +getBadgeNum()
