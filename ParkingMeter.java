@@ -10,7 +10,7 @@ public class ParkingMeter
   
   /**
    *This default constructor
-    initailizes minutesPurchased to 60.
+    initializes minutesPurchased to 60.
    */
   public ParkingMeter()
   {
