@@ -1,36 +1,23 @@
 /**
  *Simulates a parking ticket.
  *@author Akash Kumar
- *@version 1.1.1
- *@date 2018/04/27
+ *@version 1.2.0
+ *@date 2018/04/28
  */
 public class ParkingTicket
 {
-  private String make,
-                 model,
-                 color,
-                 licenseNum,
-                 policeName,
-                 badgeNum;
   private int fine;
   
   /**
-   *This constructor is used to initialize the fields.
+   *This constructor is used to initialize the field.
    */
-  public ParkingTicket(ParkedCar car, PoliceOfficer police,
-                       int illegalMinutes)
+  public ParkingTicket(int illegalMinutes)
   {
-    this.make = car.getMake();
-    this.model = car.getModel();
-    this.color = car.getColor();
-    this.licenseNum = car.getLicenseNum();
-    this.policeName = police.getPoliceName();
-    this.badgeNum = police.getBadgeNum();
     fine = getFineAmount(illegalMinutes);
   }
   
   /**
-   *Calculates the fine amount.
+   *This helper method calculates the fine amount.
    *@param illegalMinutes the number of minutes
     the car was parked illegally.
    *@return the amount of the fine. 
@@ -41,23 +28,37 @@ public class ParkingTicket
       $25 for the first hour and
       $10 for every additional hour.
      */
-    return ((illegalMinutes-60)/60)*10 + 25;
+    if(illegalMinutes > 0)
+      return ((illegalMinutes-60)/60)*10 + 25;
+    else
+      return 0;
   }
   
   /**
-   *Outputs contents of the ticket.
+   *Gets the contents of the ticket.
+   *@return the report.
    */
-  public void getReport()
+  public String getReport(ParkedCar car, PoliceOfficer police)
   {
     String report = "Parking Ticket" + "\n" +
                     "--------------" + "\n" +
-                    "Make: " + make + "\n" +
-                    "Model: " + model + "\n" +
-                    "Color: " + color + "\n\n" +
-                    "Police Officer: " + policeName + "\n" +
-                    "Badge number: " + badgeNum + "\n\n" +
+                    "Make: " + car.getMake() + "\n" +
+                    "Model: " + car.getModel() + "\n" +
+                    "Color: " + car.getColor() + "\n" +
+                    "License number: " + car.getLicenseNum() + "\n\n" +
+                    "Police Officer: " + police.getOfficerName() + "\n" +
+                    "Badge number: " + police.getBadgeNum() + "\n\n" +
                     "Fine: " + fine;
     
-    System.out.println(report);
+    return report;
+  }
+  
+  /**
+   *Converts contents of the ticket to a String.
+   *@return report
+   */
+  public String toString(ParkedCar car, PoliceOfficer police)
+  {
+    return getReport(car, police);
   }
 }
