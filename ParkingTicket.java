@@ -1,7 +1,7 @@
 /**
  *Simulates a parking ticket.
  *@author Akash Kumar
- *@version 1.0
+ *@version 1.1
  *@date 2018/04/27
  */
 public class ParkingTicket
@@ -17,17 +17,15 @@ public class ParkingTicket
   /**
    *This constructor is used to initialize the fields.
    */
-  public ParkingTicket(String make, String model, String color,
-                       String licenseNum, String policeName,
-                       String badgeNum, int illegalMinutes)
+  public ParkingTicket(ParkedCar car, PoliceOfficer police)
   {
-    this.make = make;
-    this.model = model;
-    this.color = color;
-    this.licenseNum = licenseNum;
-    this.policeName = policeName;
-    this.badgeNum = badgeNum;
-    fine = getFineAmount(illegalMinutes);
+    this.make = car.getMake();
+    this.model = car.getModel();
+    this.color = car.getColor();
+    this.licenseNum = car.getLicenseNum();
+    this.policeName = police.getPoliceName();
+    this.badgeNum = police.getBadgeNum();
+    fine = getFineAmount(car.getillegalMinutes());
   }
   
   /**
