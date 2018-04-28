@@ -1,0 +1,31 @@
+----------------------------------------------------
+ParkedCar:
+  Fields:
+    -make: String
+    -model: String
+    -color: String
+    -licenseNum: String
+    -minutesParked: int
+  Methods:
+    +ParkedCar(make: String, model: String, color: String, licenseNum: String, minutesParked: int)
+    +setMinutesParked(minutesParked: int)
+    +getMake(): String
+    +getModel(): String
+    +getColor(): String
+    +getLicenseNum(): String
+    +getMinutesParked(): int
+    
+----------------------------------------------------
+ParkingMeter:
+  Fields:
+    -minutesPurchased: int
+  Methods:
+    +ParkingMeter()
+    +ParkingMeter(minutes: int)
+    +getMinutesPurchased(): int
+    
+-----------------------------------------------------
+ParkingTicket:
+  Fields:
+    -fine: int
+  Methods:
