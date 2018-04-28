@@ -1,7 +1,7 @@
 /**
  *Simulates a parking meter.
  *@author Akash Kumar
- *@version 1.0
+ *@version 1.0.1
  *@date 2018/04/27 
  */
 public class ParkingMeter
@@ -36,7 +36,7 @@ public class ParkingMeter
     purchased.
    *@return the minutes purchased.
    */
-  public int getMinutes()
+  public int getMinutesPurchased()
   {
     return minutesPurchased;
   }
