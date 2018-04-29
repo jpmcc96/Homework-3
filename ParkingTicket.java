@@ -1,18 +1,31 @@
 /**
  *Simulates a parking ticket.
  *@author Akash Kumar
- *@version 1.2.0
- *@date 2018/04/28
+ *@version 1.3.0
+ *@date 2018/04/29
  */
 public class ParkingTicket
 {
+  private String make,
+                 model,
+                 color,
+                 licenseNum,
+                 officerName,
+                 badgeNum;
   private int fine;
   
   /**
    *This constructor is used to initialize the field.
    */
-  public ParkingTicket(int illegalMinutes)
+  public ParkingTicket(ParkedCar car, PoliceOfficer police,
+                       int illegalMinutes)
   {
+    make = car.getMake();
+    model = car.getModel();
+    color = car.getColor();
+    licenseNum = car.getLicenseNum();
+    officerName = police.getPoliceName();
+    badgeNum = police.getBadgeNum();
     fine = getFineAmount(illegalMinutes);
   }
   
@@ -38,16 +51,16 @@ public class ParkingTicket
    *Gets the contents of the ticket.
    *@return the report.
    */
-  public String getReport(ParkedCar car, PoliceOfficer police)
+  public String getReport()
   {
     String report = "Parking Ticket" + "\n" +
                     "--------------" + "\n" +
-                    "Make: " + car.getMake() + "\n" +
-                    "Model: " + car.getModel() + "\n" +
-                    "Color: " + car.getColor() + "\n" +
-                    "License number: " + car.getLicenseNum() + "\n\n" +
-                    "Police Officer: " + police.getOfficerName() + "\n" +
-                    "Badge number: " + police.getBadgeNum() + "\n\n" +
+                    "Make: " + make + "\n" +
+                    "Model: " + model + "\n" +
+                    "Color: " + color + "\n" +
+                    "License number: " + licenseNum + "\n\n" +
+                    "Police Officer: " + officerName + "\n" +
+                    "Badge number: " + badgeNum + "\n\n" +
                     "Fine: " + fine;
     
     return report;
