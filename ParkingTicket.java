@@ -1,7 +1,7 @@
 /**
  *Simulates a parking ticket.
  *@author Akash Kumar
- *@version 1.3.0
+ *@version 1.3.1
  *@date 2018/04/29
  */
 public class ParkingTicket
@@ -12,7 +12,8 @@ public class ParkingTicket
                  licenseNum,
                  officerName,
                  badgeNum;
-  private int fine;
+  private int illegalMinutes,
+              fine;
   
   /**
    *This constructor is used to initialize the field.
@@ -26,6 +27,7 @@ public class ParkingTicket
     licenseNum = car.getLicenseNum();
     officerName = police.getPoliceName();
     badgeNum = police.getBadgeNum();
+    this.illegalMinutes = illegalMinutes;
     fine = getFineAmount(illegalMinutes);
   }
   
@@ -61,6 +63,7 @@ public class ParkingTicket
                     "License number: " + licenseNum + "\n\n" +
                     "Police Officer: " + officerName + "\n" +
                     "Badge number: " + badgeNum + "\n\n" +
+                    "Minutes parked illegally: " + illegalMinutes + "\n" +
                     "Fine: " + fine;
     
     return report;
@@ -70,8 +73,8 @@ public class ParkingTicket
    *Converts contents of the ticket to a String.
    *@return report
    */
-  public String toString(ParkedCar car, PoliceOfficer police)
+  public String toString()
   {
-    return getReport(car, police);
+    return getReport();
   }
 }
