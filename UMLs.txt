@@ -27,12 +27,19 @@ ParkingMeter:
 -----------------------------------------------------
 ParkingTicket:
   Fields:
+    -make: String
+    -model: String
+    -color: String
+    -licenseNum: String
+    -officerName: String
+    -badgeNum: String
+    -illegalMinutes: int
     -fine: int
   Methods:
     +ParkingTicket(illegalMinutes: int)
     -getFineAmount(illegalMethods: int): int
-    +getReport(car: ParkedCar, police: PoliceOfficer): String
-    +toString(car: ParkedCar, police: PoliceOfficer): String
+    +getReport(): String
+    +toString(): String
     
 ------------------------------------------------------
 PoliceOfficer:
@@ -41,7 +48,10 @@ PoliceOfficer:
     -badgeNum: String
   Methods:
     +PoliceOfficer(name: String, badgeNum: String)
-    +hasTimeExpired(car: ParkedCar, meter: ParkingMeter)
-    +generateParkingTicket()
-    +getOfficerName()
-    +getBadgeNum()
+    -hasTimeExpired(car: ParkedCar, meter: ParkingMeter): boolean
+    -getIllegalMinutes(car: ParkedCar, meter: ParkingMeter): int
+    +generateParkingTicket(car: ParkedCar, meter: ParkingMeter): ParkingTicket
+    +getOfficerName(): String
+    +getBadgeNum(): String
+    
+--------------------------------------------------------    
