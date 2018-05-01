@@ -21,6 +21,8 @@ public class ParkingDemo
     String policeName = "Steve Joblez";
     String badgeNum = "007";
     PoliceOfficer officer1 = new PoliceOfficer(policeName, badgeNum);
+    System.out.println(officer1.getOfficerName());
+    System.out.println(officer1.getBadgeNum());
     
     //ticket object.
     ParkingTicket ticket1 = officer1.inspectCar(car1, meter1);
@@ -28,6 +30,18 @@ public class ParkingDemo
     //output results.
     if(ticket1 != null)
       System.out.println(ticket1);
+    else
+      System.out.println("That " + make + " sure looks neat!");
+    
+    //increase car's minutes.
+    car1.setMinutesParked(240);
+    
+    //another ticket object.
+    ParkingTicket ticket2 = officer1.inspectCar(car1, meter1);
+    
+    //output results again.
+    if(ticket2 != null)
+      System.out.println(ticket2);
     else
       System.out.println("That " + make + " sure looks neat!");
   }
