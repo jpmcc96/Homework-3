@@ -9,7 +9,7 @@ ParkedCar:
   Methods:
     +ParkedCar(make: String, model: String, color: String, licenseNum: String)
     +ParkedCar(make: String, model: String, color: String, licenseNum: String, minutesParked: int)
-    +setMinutesParked(minutesParked: int)
+    +setMinutesParked(minutesParked: int): void
     +getMake(): String
     +getModel(): String
     +getColor(): String
@@ -37,7 +37,7 @@ ParkingTicket:
     -illegalMinutes: int
     -fine: int
   Methods:
-    +ParkingTicket(illegalMinutes: int)
+    +ParkingTicket(car: ParkedCar, police: PoliceOfficer, illegalMinutes: int)
     -getFineAmount(illegalMethods: int): int
     +getReport(): String
     +toString(): String
@@ -52,7 +52,6 @@ PoliceOfficer:
     +inspectCar(car: ParkedCar, meter: ParkingMeter): ParkingTicket
     -hasTimeExpired(car: ParkedCar, meter: ParkingMeter): boolean
     -getIllegalMinutes(car: ParkedCar, meter: ParkingMeter): int
-    -generateParkingTicket(car: ParkedCar, meter: ParkingMeter): ParkingTicket
     +getOfficerName(): String
     +getBadgeNum(): String
     
