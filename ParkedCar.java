@@ -1,7 +1,12 @@
+/**
+ *This class simulates a parked car.
+ *@author Keyshawn Wright
+ @date 2018/05/02
+ */
 public class ParkedCar
 {
-     private String make, model, color, licenseNum;
-     private int minutesParked;
+   private String make, model, color, licenseNum;
+   private int minutesParked;
    
    public ParkedCar(String make, String model, String color, String licenseNum)
    {
