@@ -1,4 +1,8 @@
-# PoliceOfficer.java
+/**
+  *This class simulates a police officer.
+  *@author James McCarthy
+  *@date 2018/05/03
+*/
 public class PoliceOfficer
 {
    private String name;
@@ -10,63 +14,46 @@ public class PoliceOfficer
       this.badgeNum = badgeNum;
    }
    
-   public inspectCar(ParkedCar, status)
+   public ParkingTicket inspectCar(ParkedCar car, ParkingMeter meter)
    {
-      this.ParkedCar = ParkedCar;
-      this.status = status;
+      boolean status = hasTimeExpired(car, meter);
       
-      if(this.status = true)
+      if(status == true)
       {
-         parkingTicket = new ParkingTicket();
+         int illegalMinutes = getIllegalMinutes(car, meter);
+         return new ParkingTicket(car, this, illegalMinutes);
       }
-      
       else
       {
-         System.out.println("Car is not parked illegally"); 
+         return null; 
       }
       
    }
    
-   private boolean hasTimeExpired(int illegal)
+   private boolean hasTimeExpired(ParkedCar car, ParkingMeter meter)
    {
+      boolean status = false;
       
-      if(illegal != null)
+      if(car.getMinutesParked() > meter.getMinutesPurchased())
       {
          status = true;      
-      }
-      
-      else
-      {
-         status = false;
       }
       
       return status;
    }
    
-   public int getIllegalMinutes(car, meter)
+   public int getIllegalMinutes(ParkedCar car, ParkingMeter meter)
    {
-      int illegal = null;
-      
-      if(minutesPurchased < ParkingMeter)
-      {
-         illegal = (minutesPurchased - ParkingMeter);   
-      }
-      else
-      {
-         illegal = null;
-      }
-      return illegal;
+      return car.getMinutesParked() - meter.getMinutesPurchased();
    }
    
-   public String getOfficerName(name)
+   public String getOfficerName()
    {
-      officerName = name;
-      return officerName;
+      return name;
    }
    
-   public String getBadgeNum(badgeNum)
+   public String getBadgeNum()
    {
-      this.badgeNum = badgeNum;
       return badgeNum;
    }
    
