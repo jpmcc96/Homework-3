@@ -25,7 +25,7 @@ public class ParkingTicket
     model = car.getModel();
     color = car.getColor();
     licenseNum = car.getLicenseNum();
-    officerName = police.getPoliceName();
+    officerName = police.getOfficerName();
     badgeNum = police.getBadgeNum();
     this.illegalMinutes = illegalMinutes;
     fine = getFineAmount(illegalMinutes);
