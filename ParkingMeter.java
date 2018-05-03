@@ -1,8 +1,7 @@
 /**
  *Simulates a parking meter.
  *@author Akash Kumar
- *@version 1.0.1
- *@date 2018/04/27 
+ *@date 2018/05/04 
  */
 public class ParkingMeter
 {
