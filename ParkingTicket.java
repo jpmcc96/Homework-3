@@ -1,8 +1,7 @@
 /**
  *Simulates a parking ticket.
  *@author Akash Kumar
- *@version 1.3.1
- *@date 2018/04/29
+ *@date 2018/05/04
  */
 public class ParkingTicket
 {
@@ -64,7 +63,7 @@ public class ParkingTicket
                     "Police Officer: " + officerName + "\n" +
                     "Badge number: " + badgeNum + "\n\n" +
                     "Minutes parked illegally: " + illegalMinutes + "\n" +
-                    "Fine: " + fine;
+                    "Fine: $" + fine + "\n";
     
     return report;
   }
