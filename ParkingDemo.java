@@ -9,9 +9,9 @@ public class ParkingDemo
     String make = "Tesla",
           model = "S",
           color = "red",
-       licenNum = "4GET OIL";
+       licenseNum = "4GET OIL";
     int minutesParked = 120;
-    ParkedCar car1 = new ParkedCar();
+    ParkedCar car1 = new ParkedCar(make, model, color, licenseNum, minutesParked);
     
     //meter object.
     int minutesPurchased = 90;
@@ -21,8 +21,6 @@ public class ParkingDemo
     String policeName = "Steve Joblez";
     String badgeNum = "007";
     PoliceOfficer officer1 = new PoliceOfficer(policeName, badgeNum);
-    System.out.println(officer1.getOfficerName());
-    System.out.println(officer1.getBadgeNum());
     
     //ticket object.
     ParkingTicket ticket1 = officer1.inspectCar(car1, meter1);
@@ -31,7 +29,7 @@ public class ParkingDemo
     if(ticket1 != null)
       System.out.println(ticket1);
     else
-      System.out.println("That " + make + " sure looks neat!");
+      System.out.println("That " + car1.getMake() + " sure looks neat!");
     
     //increase car's minutes.
     car1.setMinutesParked(240);
@@ -44,5 +42,24 @@ public class ParkingDemo
       System.out.println(ticket2);
     else
       System.out.println("That " + make + " sure looks neat!");
+      
+    //another car object.
+    String make2 = "BMW",
+          model2 = "X6",
+          color2 = "Black",
+       licenseNum2 = "OOP-0256";
+    int minutesParked2 = 30;
+    ParkedCar car2 = new ParkedCar(make2, model2, color2, licenseNum2, minutesParked2);
+    //another meter object.
+    int minutesPurchased2 = 60;
+    ParkingMeter meter2 = new ParkingMeter(minutesPurchased2);
+    //another ticket object.
+    ParkingTicket ticket3 = officer1.inspectCar(car2, meter2);
+    
+    //output results again.
+    if(ticket3 != null)
+      System.out.println(ticket3);
+    else
+      System.out.println("That " + car2.getMake() + " sure looks neat!");
   }
 }
